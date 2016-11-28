@@ -1,0 +1,25 @@
+{
+  "name": "metalsmith-assert",
+  "version": "0.0.1",
+  "description": "Metalsmith assert plugin.",
+  "main": "assert.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MorganConrad/metalsmith-assert.git"
+  },
+  "keywords": [
+    "metalsmith",
+    "assert",
+    "testing",
+    "debug"
+  ],
+  "author": "Morgan Conrad <flyingspaniel@gmail.com> (http://flyingspaniel.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MorganConrad/metalsmith-assert/issues"
+  },
+  "homepage": "https://github.com/MorganConrad/metalsmith-assert#readme"
+}
