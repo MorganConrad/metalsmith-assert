@@ -10,19 +10,20 @@ Javascript:  `use(metalsmith-assert(assertions, options))`
 CLI: Haven't tested it yet.  You'd lose a few options since it can't support functions.
 
 By default, **metalsmith-assert** will console.log all AssertionErrors and a summary line.
-It then calls `done(error) with the last AssertionError (if any) or `null` if all is well.
+It then calls `done(error)` with the last AssertionError (if any) or `null` if all is well.
 
 #### Assertions
 
-This should be an object containing objects of the following format:
+**assertions** should be an object containing objects of the following format:
 
     testname : {  // used for the message
-      assert:     // which method of assert to call, null -> "ok".  See below.
+      assert:     // which method of assert to call, default -> "ok".  See below.
       actual:     // if a string, the use fileData[actual],
+                  // special case: if '.', use fileData.contents.toString()
                   // else call actual(fileData, filePath, metalsmith)
       expected:   // if a string use it
-                  // else call actual(fileData, filePath, metalsmith)
-                  // note: ignored if assert is "ok"
+                  // else call expected(fileData, filePath, metalsmith)
+                  // note: this field is ignored if assert is "ok"
     }
 
 ##### Legal values for assert method are all methods from [assert](https://nodejs.org/api/assert.html) that take "actual" as the first argument.
@@ -34,15 +35,15 @@ This should be an object containing objects of the following format:
  - notDeepStrictEqual(actual, expected, ...)
  - notEqual(actual, expected, ...)
  - notStrictEqual(actual, expected, ...)
- - ok(actual, ...)
+ - ok(actual, ...) (the default method)
  - strictEqual(actual, expected, ...)
 
-Be precise in your spelling and capitalization.  You can also use an array of objects, in which case the testname will be "test N" where N in the index in the array.
+**Be precise in your spelling and capitalization.**  You can also use an array of objects, in which case the testname will be the less informative "test N".
 
 
-#### Options
+#### Options (all default to null/false)
 
-**options.quiet**  Don't log individual failures, nor the summary of passed/failed
+**options.quiet**  Don't log individual failures, nor the summary of passed/failed.
 
 **options.continueBuildOnError** Always call `done(null)` even if there was a failure.
 
@@ -59,13 +60,16 @@ Be precise in your spelling and capitalization.  You can also use an array of ob
 
 ### Examples
 
-To verify that every blog entry has a title, and a value for "tag" === "vacation"
+To verify that every file has a title, has a tag === "vacation", and the img is a svg file
 
     .use(metalsmith-assert({
           "title exists" : { actual: "title"},
-          "tag === blog" : { assert: "equal", actual: "tag", expected: "vacation" }
+          "tag === vacation" : { assert: "equal", actual: "tag", expected: "vacation" },
+          "image is svg" : { actual: function(data) { return /\.svg$/.test(data.img); }
         } ) )
 
 
 
 ### Notes, Todos, and Caveats
+
+Be precise in your spelling and capitalization!

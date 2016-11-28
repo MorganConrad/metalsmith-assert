@@ -39,10 +39,12 @@ function metalsmithAssert(assertions, options) {
                   var v = assertions[testname];
                   var method = v['assert'] || 'ok';
                   var actual = v['actual'];
-                  if (typeof actual === 'string')
-                     actual = fileData[actual];
-                  else
+                  if (typeof actual === 'string') {
+                     actual = (actual === '.') ? fileData.contents.toString() : fileData[actual];
+                  }
+                  else {
                      actual = actual(fileData, filePath, metalsmith);
+                  }
 
                   var expected = v['expected'];
                   if (typeof expected === "function")
