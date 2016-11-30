@@ -3,7 +3,7 @@
 [![NPM Downloads](http://img.shields.io/npm/dm/metalsmith-assert.svg)](https://www.npmjs.org/package/metalsmith-assert)
 
 # metalsmith-assert
-Metalsmith plugin for testing the file objects with Node's [assert](https://nodejs.org/api/assert.html) module.  
+A [Metalsmith](http://www.metalsmith.io/) plugin for testing the file objects with Node's [assert](https://nodejs.org/api/assert.html) module.  
 
 ### Usage
 
