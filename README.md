@@ -1,3 +1,7 @@
+[![Build Status](https://secure.travis-ci.org/MorganConrad/metalsmith-assert.png)](http://travis-ci.org/MorganConrad/metalsmith-assert)
+[![License](http://img.shields.io/badge/license-MIT-A31F34.svg)](https://github.com/MorganConrad/metalsmith-assert)
+[![NPM Downloads](http://img.shields.io/npm/dm/metalsmith-assert.svg)](https://www.npmjs.org/package/metalsmith-assert)
+
 # metalsmith-assert
 Metalsmith plugin for testing the file objects with Node's [assert](https://nodejs.org/api/assert.html) module.  
 
