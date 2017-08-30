@@ -1,6 +1,8 @@
 [![Build Status](https://secure.travis-ci.org/MorganConrad/metalsmith-assert.png)](http://travis-ci.org/MorganConrad/metalsmith-assert)
 [![License](http://img.shields.io/badge/license-MIT-A31F34.svg)](https://github.com/MorganConrad/metalsmith-assert)
 [![NPM Downloads](http://img.shields.io/npm/dm/metalsmith-assert.svg)](https://www.npmjs.org/package/metalsmith-assert)
+[![Known Vulnerabilities](https://snyk.io/test/github/morganconrad/metalsmith-assert/badge.svg)](https://snyk.io/test/github/morganconrad/metalsmith-assert)
+
 
 # metalsmith-assert
 A [Metalsmith](http://www.metalsmith.io/) plugin for testing the file objects with Node's [assert](https://nodejs.org/api/assert.html) module.  
@@ -11,7 +13,7 @@ Install as usual,  `npm install metalsmith-assert`.
 
 Javascript:  `use(metalsmith-assert(assertions, options))`
 
-CLI: Haven't tested it yet.  You'd lose a few options since it can't support functions.
+CLI: You'll lose a few options since it can't support functions.
 
 By default, **metalsmith-assert** will console.log all AssertionErrors and a summary line.
 It then calls `done(error)` with the last AssertionError (if any) or `null` if all is well.
