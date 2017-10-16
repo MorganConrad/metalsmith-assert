@@ -2,7 +2,7 @@
 [![License](http://img.shields.io/badge/license-MIT-A31F34.svg)](https://github.com/MorganConrad/metalsmith-assert)
 [![NPM Downloads](http://img.shields.io/npm/dm/metalsmith-assert.svg)](https://www.npmjs.org/package/metalsmith-assert)
 [![Known Vulnerabilities](https://snyk.io/test/github/morganconrad/metalsmith-assert/badge.svg)](https://snyk.io/test/github/morganconrad/metalsmith-assert)
-
+[![Coverage Status](https://coveralls.io/repos/github/MorganConrad/metalsmith-assert/badge.svg)](https://coveralls.io/github/MorganConrad/metalsmith-assert)
 
 # metalsmith-assert
 A [Metalsmith](http://www.metalsmith.io/) plugin for testing the file objects with Node's [assert](https://nodejs.org/api/assert.html) module.  

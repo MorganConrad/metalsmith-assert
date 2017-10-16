@@ -57,7 +57,7 @@ test('filefilter', function(t) {
    var files = createFiles();
 
    // test Regex and string
-   t.doesNotThrow(function() { msassert( failsOn2PassesOn1, { quiet: true, fileFilter : /md$/})(files, null, done) });
+   t.doesNotThrow(function() { msassert( failsOn2PassesOn1, { fileFilter : /md$/})(files, null, done) });
 
    t.doesNotThrow(function() { msassert( failsOn1PassesOn2, { quiet: true, fileFilter: 'html$'})(files, null, done) });
    // test user provided function
