@@ -1,6 +1,6 @@
 {
   "name": "metalsmith-assert",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Metalsmith assert plugin.",
   "main": "assert.js",
   "scripts": {
@@ -18,10 +18,11 @@
     "debug"
   ],
   "devDependencies": {
-    "coveralls": "^3.1",
+    "coveralls": "^3.1.1",
     "nyc": "^15.1.0",
-    "tape": "^5.2"
+    "tape": "^5.3"
   },
+  "files": [],
   "author": "Morgan Conrad <flyingspaniel@gmail.com> (http://flyingspaniel.com/)",
   "license": "MIT",
   "bugs": {
